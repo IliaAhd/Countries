@@ -54,7 +54,7 @@ Make sure you have the following installed:
 
 2. Navigate to the project directory:
    ```bash
-   cd Country
+   cd Countries
    ```
 
 3. Install dependencies:
