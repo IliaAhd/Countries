@@ -1,5 +1,5 @@
-import { API } from './utils/config';
-import { AJAX } from './utils/helper';
+import { API } from '../utils/config';
+import { AJAX } from '../utils/helper';
 
 // State object to hold various data arrays
 export const state = {

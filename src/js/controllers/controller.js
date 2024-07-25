@@ -1,5 +1,10 @@
-import * as model from './model';
-import { ShowCountriesView, Theme, SearchView, ContinentsView } from './view';
+import * as model from '../models/model';
+import {
+  ShowCountriesView,
+  Theme,
+  SearchView,
+  ContinentsView,
+} from '../views/view';
 
 // Instantiate view classes
 const showCountriesView = new ShowCountriesView();

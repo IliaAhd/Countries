@@ -1,6 +1,6 @@
-import { Theme } from '../view';
-import * as model from './modelCountry';
-import { CountryView, BrowseBack } from './viewCountry';
+import { Theme } from '../views/view';
+import * as model from '../models/countryModel';
+import { CountryView, BrowseBack } from '../views/countryView';
 
 // Initialize instances of Theme, CountryView, and BrowseBack
 const theme = new Theme();
@@ -21,8 +21,8 @@ const controllCountry = async () => {
     // Render the fetched country data
     countryView.render(data);
   } catch (error) {
-    // Log any errors to the console
-    countryView.renderError(error)
+    // Render error message
+    countryView.renderError(error);
   }
 };
 
@@ -43,4 +43,3 @@ const init = () => {
 
 // Run the init function to start the application
 init();
-

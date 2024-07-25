@@ -2,7 +2,6 @@ import 'flowbite';
 
 // Base view class
 export class View {
-  _data;
   _message;
 
   /**
@@ -10,9 +9,8 @@ export class View {
    * @param {Array} data - Data to render
    */
   render(data) {
-    this._data = data;
     this._clear();
-    this._data.map(d =>
+    data.map(d =>
       this._parentEl.insertAdjacentHTML('beforeend', this._generateMarkup(d))
     );
   }
@@ -31,7 +29,7 @@ export class View {
    */
   renderLoadingSpinner() {
     const markup = `
-      <div class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+      <div class="w-full h-32 grid place-items-center">
         <div class="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-tr from-gray-900 to-slate-400 animate-spin absolute">
           <div class="h-9 w-9 rounded-full bg-light-mode-background dark:bg-dark-mode-background"></div>
         </div>
@@ -60,8 +58,8 @@ export class ShowCountriesView extends View {
    */
   _generateMarkup(data) {
     return `
-      <li class="rounded-lg overflow-hidden shadow-[rgba(17,_17,_26,_0.2)_0px_0px_16px]  dark:bg-dark-mode-elements sm:h-[420px]">
-        <a href="/country?${data.code}" class="card">
+      <li class="rounded-lg overflow-hidden shadow-[rgba(17,_17,_26,_0.2)_0px_0px_16px]  dark:bg-dark-mode-elements  hover:scale-105 transition-all hover:shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px]">
+        <a href="/country?${data.code}" class="card block sm:h-[420px]">
           <img class="sm:h-[180px] w-full" src="${data.flag}" alt="${
       data.flagAlt
     }" />

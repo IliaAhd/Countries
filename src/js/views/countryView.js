@@ -1,4 +1,4 @@
-import { View } from '../view';
+import { View } from '../views/view';
 
 /**
  * Class representing the view for displaying a single country's details.
@@ -25,7 +25,9 @@ export class CountryView extends View {
                 data.name.common
               }</h2>
               <p><span class="font-bold">Native Name:</span> <span class="font-light">${
-                Object.entries(data.name.nativeName)[0][1].official
+                data.name.nativeName
+                  ? Object.entries(data.name.nativeName)[0][1].official
+                  : 'Not found!'
               }</span></p>
               <p><span class="font-bold">Population:</span> <span class="font-light">${new Intl.NumberFormat().format(
                 data.population
@@ -42,10 +44,18 @@ export class CountryView extends View {
                 data.tld[0]
               }</span></p>
               <p><span class="font-bold">Currency:</span> <span class="font-light">${
-                Object.entries(data.currencies)[0][1].name
-              } (${Object.entries(data.currencies)[0][1].symbol})</span></p>
+                data.currencies
+                  ? Object.entries(data.currencies)[0][1].name
+                  : 'Not found!'
+              } (${
+      data.currencies
+        ? Object.entries(data.currencies)[0][1].symbol
+        : 'Not found!'
+    })</span></p>
               <p><span class="font-bold">Languages:</span> <span class="font-light">${
-                Object.entries(data.languages)[0][1]
+                data.languages
+                  ? Object.entries(data.languages)[0][1]
+                  : 'Not found!'
               }</span></p>
             </div>
           </div>
