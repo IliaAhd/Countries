@@ -108,5 +108,3 @@ Contributions are welcome! Feel free to submit a pull request or open an issue.
 
 - [REST Countries API](https://restcountries.com/) for providing country data.
 - [Flowbite](https://flowbite.com/) for UI components.
-
-```
