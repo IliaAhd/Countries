@@ -1,6 +1,3 @@
-Here is a `README.md` file for your project:
-
-```markdown
 # Country Info App
 
 ## Overview
@@ -25,7 +22,7 @@ The Country Info App is a web application that allows users to search for and vi
 ## Project Structure
 
 ```plaintext
-.
+
 ├── index.html
 ├── css
 │   ├── styles.css
@@ -57,7 +54,7 @@ Make sure you have the following installed:
 
 2. Navigate to the project directory:
    ```bash
-   cd country-info-app
+   cd Countries
    ```
 
 3. Install dependencies:
