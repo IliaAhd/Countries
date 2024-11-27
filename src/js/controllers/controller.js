@@ -15,7 +15,7 @@ const theme = new Theme();
 /**
  * Controller function to show all countries
  */
-const controllShowAllCountries = async () => {
+const controlShowAllCountries = async () => {
   try {
     // Show loading skeleton
     showCountriesView.renderSkeletonLoading();
@@ -32,7 +32,7 @@ const controllShowAllCountries = async () => {
  * Controller function to handle country search
  * @param {string} query - The search query string
  */
-const controllSearch = async query => {
+const controlSearch = async query => {
   try {
     // Show loading spinner
     showCountriesView.renderLoadingSpinner();
@@ -52,7 +52,7 @@ const controllSearch = async query => {
  * Controller function to handle continent filtering
  * @param {string} query - The continent query string
  */
-const controllContinents = async query => {
+const controlContinents = async query => {
   try {
     // Show loading skeleton
     showCountriesView.renderSkeletonLoading();
@@ -72,9 +72,9 @@ const controllContinents = async query => {
  * Initialize the application
  */
 const init = () => {
-  controllShowAllCountries(); // Show all countries on load
-  searchView.addHandlerSearch(controllSearch); // Add search handler
-  continentsView.addHandlerContinents(controllContinents); // Add continent filter handler
+  controlShowAllCountries(); // Show all countries on load
+  searchView.addHandlerSearch(controlSearch); // Add search handler
+  continentsView.addHandlerContinents(controlContinents); // Add continent filter handler
   theme.addHandlerToggle(); // Add theme toggle handler
 };
 

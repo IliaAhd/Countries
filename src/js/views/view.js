@@ -29,7 +29,7 @@ export class View {
    */
   renderLoadingSpinner() {
     const markup = `
-      <div class="w-full h-32 grid place-items-center">
+      <div class="w-full grid place-items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-screen backdrop-blur-sm">
         <div class="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-tr from-gray-900 to-slate-400 animate-spin absolute">
           <div class="h-9 w-9 rounded-full bg-light-mode-background dark:bg-dark-mode-background"></div>
         </div>
@@ -58,8 +58,10 @@ export class ShowCountriesView extends View {
    */
   _generateMarkup(data) {
     return `
-      <li class="rounded-lg overflow-hidden shadow-[rgba(17,_17,_26,_0.2)_0px_0px_16px]  dark:bg-dark-mode-elements  hover:scale-105 transition-all hover:shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px]">
-        <a href="/country?${data.code}" class="card block sm:h-[420px]">
+      <li class="">
+        <a href="/country?${
+          data.code
+        }" class="card block sm:h-[420px] rounded-lg overflow-hidden shadow-[rgba(17,_17,_26,_0.2)_0px_0px_16px]  dark:bg-dark-mode-elements hover:scale-105 transition-all hover:shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px]">
           <img class="sm:h-[180px] w-full" src="${data.flag}" alt="${
       data.flagAlt
     }" />
